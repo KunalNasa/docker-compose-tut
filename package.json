@@ -2,9 +2,11 @@
   "name": "docker-compose-project",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "tsc -b",
-    "dev:docker": "npx prisma generate && npx prisma migrate dev --name init && node dist/index.js"
+    "build": "npx tsc",
+    "dev:docker": "npx prisma generate && npx prisma migrate dev --name init && nodemon --watch src --ext ts --exec tsx src/index.ts",
+    "dev": "tsx src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +16,11 @@
     "@prisma/client": "^6.4.1",
     "express": "^4.21.2",
     "prisma": "^6.4.1",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9"
   }
 }

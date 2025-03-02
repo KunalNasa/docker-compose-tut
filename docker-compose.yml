@@ -8,17 +8,17 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mypass
       POSTGRES_DB: my_docker_app
-    
+
   my_docker_app:
-    build: 
-      network: host
+    build:
       context: ./
       dockerfile: Dockerfile
-  
     environment:
       - DATABASE_URL=postgresql://postgres:mypass@postgres:5432/my_docker_app
-
     ports:
       - 8076:8076
+    volumes:
+      - .:/app  # Mounts your local code into the container, : means mapping
+      - /app/node_modules  # Prevents overwriting node_modules
     depends_on:
       - postgres

@@ -21,7 +21,7 @@ app.post('/', async (req, res) => {
 app.get('/', async (req, res) => {
     const data = await prismaClient.user.findMany();
     res.json({
-        message : "Hello World",
+        message : "Hello world",
         data
     })
 })

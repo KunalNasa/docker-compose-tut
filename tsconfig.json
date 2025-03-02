@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES6",
     "module": "commonjs",
+    "outDir": "./src/dist",
     "rootDir": "./src",
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
-  }
+    "esModuleInterop": true,
+    "skipLibCheck": true, // Avoids checking third-party type definitions
+    "resolveJsonModule": true, // For importing JSON files if needed
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": [
+    "./src/**/*.ts", // Include all TypeScript files in src
+    "./src/types/**/*.d.ts" // Include all type declarations
+  ],
+  "exclude": ["node_modules"]
 }
