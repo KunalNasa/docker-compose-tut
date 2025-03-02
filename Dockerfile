@@ -14,4 +14,4 @@ RUN npm run build
 
 EXPOSE 8076
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev:docker"]
