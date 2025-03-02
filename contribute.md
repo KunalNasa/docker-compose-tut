@@ -12,8 +12,16 @@
  -npm run build
  -npm run start
 
- #Docker installation
+ ## Docker installation
+ -install docker
+ -start postgres
+    - docker run -e POSTGRES_PASSWORD=yourpass -d -p 5435:5432 postgres     
+ -Build the image - `docker build -t user-project`
+ -start the project - `docker run -p 3086:3086 user-project`
 
  ## docker compose install installation steps
- 
+ -install docker, docker compose
+ -Run `docker-compose up`
+
+
  
